@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ist_hometest_app/views/home_page.dart';
 import '../controller/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
@@ -16,6 +17,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    if (loginController.isLogged.isTrue) {
+      return HomePage();
+    }
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -95,6 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         onPressed: (){
                           loginController.login(_controllerUsername.text, _controllerPassword.text);
+                          Navigator.of(context).pushReplacementNamed('/homePage');
                         }, 
                         child: const Text(
                           'Login',

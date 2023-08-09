@@ -14,4 +14,9 @@ class LoginController extends GetxController {
       isLogged(true);
     }
   }
+
+  logout() {
+    userData.clear();
+    isLogged(false);
+  }
 }

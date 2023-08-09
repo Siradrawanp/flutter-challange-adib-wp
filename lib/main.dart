@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'views/splash_page.dart';
+import 'views/home_page.dart';
+import 'views/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashPage(),
+      //home: const SplashPage(),
+      initialRoute: '/loginPage',
+      routes: {
+        '/homePage': (context) => HomePage(),
+        '/loginPage': (context) => const LoginPage(), 
+      },
     );
   }
 }

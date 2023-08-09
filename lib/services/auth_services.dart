@@ -4,8 +4,6 @@ import '../model/user_model.dart';
 
 
 class AuthServices {
-  static var client = http.Client();
-
   static Future<Map<String, dynamic>> login(String username, String password) async {
     Map<String, dynamic> result;
     Uri uri = Uri.parse('https://dummyjson.com/auth/login');
