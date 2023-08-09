@@ -11,6 +11,7 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.deepOrange,
       elevation: 3,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -70,6 +71,7 @@ class ProductTile extends StatelessWidget {
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
+                        color: Colors.white
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -81,6 +83,7 @@ class ProductTile extends StatelessWidget {
                       product.category,
                       style: const TextStyle(
                         fontSize: 12.0,
+                        color: Colors.white
                       ),
                     ),
                   )

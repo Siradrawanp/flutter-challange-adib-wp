@@ -15,15 +15,26 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          ElevatedButton(
+      appBar: AppBar(
+        surfaceTintColor: Colors.white,
+        title: const Text(
+          'Home Shop',
+          style: TextStyle(
+            color: Colors.deepOrange,
+          ),
+        ),
+        actions: [
+          IconButton(
             onPressed: () {
               loginController.logout();
               Navigator.of(context).pushReplacementNamed('/loginPage');
             }, 
-            child: Text('Logout')
+            icon: const Icon(Icons.logout,color: Colors.deepOrange,)
           ),
+        ],
+      ),
+      body: Column(
+        children: [
           Expanded(
             child: Obx(() {
               if (productController.isLoading.value) {
