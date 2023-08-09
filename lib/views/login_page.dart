@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../controller/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,6 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final loginController = Get.put(LoginController());
   final TextEditingController _controllerUsername = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
 
@@ -90,7 +93,9 @@ class _LoginPageState extends State<LoginPage> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.deepPurple,
                         ),
-                        onPressed: (){}, 
+                        onPressed: (){
+                          loginController.login(_controllerUsername.text, _controllerPassword.text);
+                        }, 
                         child: const Text(
                           'Login',
                           style: TextStyle(

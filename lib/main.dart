@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'views/login_page.dart';
+
+import 'views/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      home: const SplashPage(),
     );
   }
 }
