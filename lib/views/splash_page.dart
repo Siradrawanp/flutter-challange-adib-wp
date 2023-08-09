@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () {
       Navigator.popAndPushNamed(context, '/loginPage');
      });
   }
@@ -26,14 +26,16 @@ class _SplashPageState extends State<SplashPage> {
         children: [
           Align(
             alignment: Alignment.topRight,
-            child: Image.asset('header-splash.png'),
+            child: Image.asset('assets/header-splash.png'),
           ),
           Center(
-            child: Image.asset('logo.png'),
+            child: Image.asset('assets/logo.png'),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Image.asset('footer-splash.png'),
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Image.asset('assets/footer-splash.png'),
+            ),
           )
         ],
       ),

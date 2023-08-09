@@ -24,24 +24,24 @@ class _LoginPageState extends State<LoginPage> {
     }
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Image.asset('header-login.png'),
-                ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 40.0),
-                    child: Image.asset('logo.png'),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Image.asset('assets/header-login.png'),
                   ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Form(
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 40.0),
+                      child: Image.asset('assets/logo.png'),
+                    ),
+                  ),
+                ],
+              ),
+              Form(
                 key: _formKey,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 24),
@@ -133,15 +133,15 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-            ),
-            const Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 40.0),
-                child: Text('Don\'t have account? Sign up')
+              const Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 40.0),
+                  child: Text('Don\'t have account? Sign up')
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
